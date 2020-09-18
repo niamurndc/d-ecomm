@@ -1,0 +1,84 @@
+{% extends 'main-layout.html' %}
+{% block content %}
+
+	<section id="cart_items">
+		<div class="container">
+
+			<div class="step-one">
+				<h2 class="heading">Checkout Option</h2>
+			</div>
+			<div class="checkout-options">
+				<ul class="nav">
+					<li>
+						<a href="/cart/">Back</a>
+					</li>
+				</ul>
+			</div><!--/checkout-options-->
+
+			<div class="register-req">
+				<p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
+			</div><!--/register-req-->
+
+			<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="shopper-info">
+
+
+							<a class="btn btn-primary" href="/shop/">Continue Shopping</a>
+							
+						</div>
+					</div>
+					<div class="col-sm-4 clearfix">
+						<div class="bill-to">
+							<p>Bill To</p>
+							<div class="shopper-info">
+								<form action="/order/" method="post">
+								{% csrf_token %}
+									<input name="name" type="text" placeholder="Customer Name">
+									<input name="email" type="email" placeholder="User Email">
+									<input name="address" type="text" placeholder="Address">
+									<input name="phone" type="text" placeholder="Phone">
+									<input type="text" name="product" class="sr-only" id="get-product">
+									<input type="text" name="total" id="get-total">
+									<select name="payment">
+										<option>-- Payment --</option>
+										<option value="Paypal">Paypal</option>
+										<option value="Card">Cart</option>
+										<option value="Cash on Delivery">Cash on Delivery</option>
+									</select>
+									<button class="btn btn-primary" type="submit">Continue</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="order-message">
+							<p>Shipping Order</p>
+							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+							<label><input type="checkbox"> Shipping to bill address</label>
+						</div>	
+					</div>					
+				</div>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="description">Title</td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody id='cart-table'>
+
+					</tbody>
+				</table>
+			</div>
+	</section> <!--/#cart_items-->
+
+	
+
+{% endblock %}

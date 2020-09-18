@@ -1,0 +1,28 @@
+{% extends 'main-layout.html' %}
+{% block content %}
+
+	<section id="cart_items">
+		<div class="container">
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="description">Title</td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody id='cart-table'>
+
+					</tbody>
+				</table>
+			</div>
+			<div class="text-right">
+				<a href="/checkout/" class="btn btn-primary">Checkout</a>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+{% endblock  %}

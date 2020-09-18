@@ -1,0 +1,41 @@
+{% extends 'main-layout.html' %}
+
+{% block content %}
+	
+	<section id="advertisement">
+		<div class="container">
+			<img src="/media/advertisement.jpg" alt="" />
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					{% include 'sidebar.html' %}
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						{% for product in products %}
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+											<img src="/media/{{product.image}}" height='250px' width='200px' />
+											<h2>${{product.price}}</h2>
+											<p>{{product.title}}</p>
+											<a href="/product/{{product.id}}/" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View Product</a>
+										</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div><!--features_items-->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+{% endblock %}

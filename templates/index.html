@@ -1,0 +1,59 @@
+{% extends 'main-layout.html' %}
+
+{% block content %}
+{% load static %}
+	
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<h1 style="margin-top: 100px;"><span>Django</span>-Ecommerce</h1>
+									<h2>Ecommerce Website with Django</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="{% static 'js/slider1.jpg' %}" class="girl img-responsive" />
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					{% include 'sidebar.html' %}
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Latest Product</h2>
+						{% for product in products %}
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+											<img src="/media/{{product.image}}" height='250px' width='200px' />
+											<h2>${{product.price}}</h2>
+											<p>{{product.title}}</p>
+											<a href="/product/{{product.id}}/" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View Product</a>
+										</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						
+						
+						
+					</div><!--features_items-->		
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock  %}

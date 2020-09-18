@@ -1,0 +1,6 @@
+.vscode
+ecomm/__pycache__
+order/__pycache__
+product/__pycache__
+media/
+db.sqlite3

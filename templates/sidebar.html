@@ -1,0 +1,26 @@
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+
+							{% for cat in cats %}
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">{{cat.name}}</a></h4>
+								</div>
+							</div>
+							{% endfor %}
+							
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+								{% for brand in brands %}
+									<li><a href="#">{{brand.name}}</a></li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+					
+					</div>
