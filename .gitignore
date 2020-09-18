@@ -4,3 +4,10 @@ order/__pycache__
 product/__pycache__
 media/
 db.sqlite3
+
+staic/js/bootstrap.min.js
+static/js/jquery.js
+static/js/jquery.scrollUp.min.js
+static/js/main.js
+
+static/css
